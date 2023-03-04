@@ -43,7 +43,7 @@ There are rate limit settings in the same config file.
 
 Example:
 
-![](../../../Pictures/Screenshot from 2023-03-04 11-45-44.png)
+![](doc/images/screen_example_1.png)
 
 **Tests run:**
 

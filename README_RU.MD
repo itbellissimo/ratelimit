@@ -41,7 +41,7 @@ IP должен извлекаться из заголовка X-Forwarded-For
 
 Пример запуска:
 
-![](../../../Pictures/Screenshot from 2023-03-04 11-45-44.png)
+![](doc/images/screen_example_1.png)
 
 Запуск тестов:
 
