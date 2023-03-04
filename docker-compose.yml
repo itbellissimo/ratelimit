@@ -1,0 +1,10 @@
+version: '3'
+services:
+  my-project-go-air:
+    container_name: my_test_go
+    image: cosmtrek/air
+    working_dir: /project-package
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - ./:/project-package/

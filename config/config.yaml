@@ -1,0 +1,42 @@
+server:
+  port: 3000
+  rate_limits:
+    title: "RateLimiter rules"
+    by_ip:
+      exclude_ips: []
+      data:
+        - id: "87206c45-3098-45c1-86c1-0c28296d163f"
+          handlers:
+            - method: "GET"
+              protocol: "http/1.1"
+              url: "/run"
+            - method: "GET"
+              protocol: "http/.*"
+              protocol_regexp: true
+              url: "/reset"
+          limit: 10
+          block_time: 120
+          mask: "123.45.67.0/24"
+          exclude_ips: []
+        - id: "a887752d-d09a-4d7e-9fae-a2ba38a0d685"
+          handlers:
+            - url: "/limit20"
+          limit: 20
+          block_time: 120
+          exclude_ips: []
+        - id: "5fd47067-433b-4478-b9c4-74f91a411984"
+          handlers:
+            - url: "/.*"
+              regexp: true
+          limit: 10
+          block_time: 120
+          exclude_ips: []
+    by_app:
+      data:
+        - handlers:
+            - url: "/limit_by_app"
+          app: "my_app_name"
+          period: "hour"
+          limit: 20
+          block_time: 120
+          exclude_ips: []
